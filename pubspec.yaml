@@ -1,17 +1,11 @@
 name: flutter_starter_kit
-description: Flutter Starter Kit with Bloc pattern and Rxdart
+description: Flutter Starter Kit with flutter_bloc package
 authors:
- - King Wu <king.wuff101@gmail.com>
+ - Uzuki-P (rahmatfajar15@gmail.com)
 homepage: https://github.com/KingWu/flutter_starter_kit
-maintainer: King Wu (@kw101)
+maintainer: Rahmat Fajar (uzuki-p)
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# Read more about versioning at semver.org.
-version: 1.4.1
+version: 0.0.1
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -21,22 +15,38 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+
+### Commented package are package that useful but
+##  you don't need it to use this starter kit
+
   fluro: 1.6.3
+  flutter_bloc: ^6.0.5
+  shared_preferences: ^0.5.12
   dio: 3.0.9
   logging: 0.11.4
-  json_annotation: 3.0.1
-  sprintf: 4.0.2
-  rxdart: 0.22.6
-  cached_network_image: 2.0.0
   sqflite: 1.3.0+2
-  smooth_star_rating: 1.1.1
   flutter_stetho: 0.5.2
-  analyzer: 0.39.10
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  equatable: ^1.2.5
   cupertino_icons: 0.1.3
   flutter_platform_widgets: 0.50.0
+  supercharged: ^1.10.0
+  flutter_launcher_icons: ^0.8.0
+  json_annotation: 3.0.1
+  url_launcher: ^5.7.1
+#  intl_phone_number_input: ^0.4.6+2
+#  firebase_messaging: ^6.0.16
+#  flutter_local_notifications: ^1.4.4+3
+#  intl: ^0.16.1
+#  email_validator: ^1.0.5
+
+### Widget related
+  flutter_svg: ^0.19.0
+  fluttertoast: ^7.1.1
+#  html_editor: ^1.0.1
+#  flutter_html: ^1.0.2
+#  image_picker: ^0.6.7+4
+#  file_picker_cross: ^3.0.3
+#  cached_network_image: 2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -45,45 +55,63 @@ dev_dependencies:
   json_serializable: 3.3.0
   gen_lang: 0.1.3
   lang_table: 0.2.0
+  effective_dart: ^1.2.4
 
+# https://github.com/fluttercommunity/flutter_launcher_icons#flutter-launcher-icons
+flutter_icons:
+ #  image_path: "assets/images/icon-128x128.png"
+ image_path_android: "assets/icons/launcher/android_512x512.png"
+ image_path_ios: "assets/icons/launcher/ios_512x512.jpg"
+ android: true # can specify file name here e.g. "ic_launcher"
+ ios: true # can specify file name here e.g. "My-Launcher-Icon"
+ adaptive_icon_background: "assets/icons/launcher/new_512x512.png" # only available for Android 8.0 devices and above
+ # adaptive_icon_foreground: "assets/images/icon-foreground-432x432.png" # only available for Android 8.0 devices and above
 
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
-
-# The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font isSupported
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+   - assets/
+   - assets/icons/
+   - assets/images/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.io/assets-and-images/#resolution-aware.
+  fonts:
+    # <ROBOTO>
+    - family: Roboto
+      fonts:
+       - asset: assets/fonts/Roboto-Thin.ttf
+         weight: 100
+       - asset: assets/fonts/Roboto-ThinItalic.ttf
+         weight: 100
+         style: italic
 
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.io/assets-and-images/#from-packages
+       - asset: assets/fonts/Roboto-Light.ttf
+         weight: 300
+       - asset: assets/fonts/Roboto-LightItalic.ttf
+         weight: 300
+         style: italic
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.io/custom-fonts/#from-packages
+       - asset: assets/fonts/Roboto-Regular.ttf
+         weight: 400
+       - asset: assets/fonts/Roboto-Italic.ttf
+         weight: 400
+         style: italic
+
+       - asset: assets/fonts/Roboto-Medium.ttf
+         weight: 500
+       - asset: assets/fonts/Roboto-MediumItalic.ttf
+         weight: 500
+         style: italic
+
+       - asset: assets/fonts/Roboto-Bold.ttf
+         weight: 700
+       - asset: assets/fonts/Roboto-BoldItalic.ttf
+         weight: 700
+         style: italic
+
+       - asset: assets/fonts/Roboto-Black.ttf
+         weight: 900
+       - asset: assets/fonts/Roboto-BlackItalic.ttf
+         weight: 900
+         style: italic
+    # </ROBOTO>

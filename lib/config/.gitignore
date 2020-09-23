@@ -1,0 +1,6 @@
+*
+!.gitignore
+!env.dart
+!main_development.dart.example
+!main_production.dart.example
+!main_staging.dart.example

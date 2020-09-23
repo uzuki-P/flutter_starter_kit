@@ -1,0 +1,11 @@
+import 'env.dart';
+
+void main() => Staging();
+
+class Staging extends Env {
+  final String appName = "(Staging) Bloc Starter Kit";
+  final String baseUrl = 'https://staging.example.com/api/v1';
+  EnvType environmentType = EnvType.STAGING;
+
+  final String dbName = 'blocStarterKit-Stg.db';
+}

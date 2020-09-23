@@ -1,0 +1,11 @@
+import 'env.dart';
+
+void main() => Production();
+
+class Production extends Env {
+  final String appName = "Bloc Starter Kit";
+  final String baseUrl = 'https://example.com/api/v1';
+  EnvType environmentType = EnvType.PRODUCTION;
+
+  final String dbName = 'blocStarterKit.db';
+}
